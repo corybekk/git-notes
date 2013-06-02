@@ -54,3 +54,11 @@ changes i think.
 check out this website for learning git
 
 http://git-scm.com/book
+
+ALSO IF YOU GET THIS ERROR:
+
+ gnome-ssh-askpass:13543): Gtk-WARNING **: cannot open display:
+
+put this command in and it will fix it!
+
+unset SSH_ASKPASS
