@@ -20,7 +20,7 @@ $ git config --list
 2-now that you have your config set up (you can do way more to it) you can now make a repository. 
 in this case on the cwolf server, go into the directory you want to make into a repository and put..
 
-git init
+$ git init
 
 this makes a git repo in that directory and makes a .git directory, which doesn't show but you can 
 enter it.
@@ -29,18 +29,23 @@ if you dont want to use a directory on the cwolf server and use a repo thats alr
 have to clone it over to the cwolf server. Remembe though, you still have to make a repo on the cwolf
 server with "git init" before you clone stuff from github repo into the cwolfserver repo
 
-git clone git$githubWhaetverRepoFromGithub
+$ git clone git@githubWhaetverRepoFromGithub master   <-- i think thats right
 
+there is also git pull 
 
+$ git pull git@githubWhwatverRepoFromGitHub master  <-- this pulls files from whatever repo on github
+      	   				    	    	and adds them to your local repo. Note it grabs
+							from master.. you can choose a branch if you 
+							want?
 
-git add remote origin http://UrlOnGitHubForThatRepository  //so we know where are files are pushed
+$ git add remote origin http://UrlOnGitHubForThatRepository  //so we know where are files are pushed
     	     
-git add file // this puts the file into the staging area
-git status // this shows which files are in the staging area 
-git diff //shows the difference between the files you modified
-git commit // this commits the files that are in the staging area. you can do git commit -m "comment"
-git log // shows the commits you made to that repository and the note you put for that commit
-git push origin master // pushes the commit to the remote repository aka github. master means you
+$ git add file // this puts the file into the staging area
+$ git status // this shows which files are in the staging area 
+$ git diff //shows the difference between the files you modified
+$ git commit // this commits the files that are in the staging area. you can do git commit -m "comment"
+$ git log // shows the commits you made to that repository and the note you put for that commit
+$ git push origin master // pushes the commit to the remote repository aka github. master means you
     	 	       // are pushing it to the master, and 'origin' is the web url of the repo
 		       // on github. it should also ask for the github id and pass.
 
@@ -49,7 +54,7 @@ test it first before you add it to master you would then make a 'branch' which i
 copy of master that you can add stuff to and it wont mess up the main version. Once you got your
 changes to work then you can "i think its merge?" the branch with the master and that applies the
 changes i think. 
-
+//-------------------------------------------
 
 check out this website for learning git
 
@@ -61,4 +66,13 @@ ALSO IF YOU GET THIS ERROR:
 
 put this command in and it will fix it!
 
-unset SSH_ASKPASS
+$ unset SSH_ASKPASS
+//---------------------------------------------
+
+This was easy for me to understand so im putting it in:
+
+git clone is how you get a local copy of an existing repository to work on. It's usually only used once for a given repository, unless you want to have multiple working copies of it around. (Or want to get a clean copy after messing up your local one...)
+
+git pull (or git fetch + git merge) is how you update that local copy with new commits from the remote repository. If you are collaborating with others, it is a command that you will run frequently.
+
+As your first example shows, it is possible to emulate git clone with an assortment of other git commands, but it's not really the case that git pull is doing "basically the same thing" as git clone (or vice-versa).
