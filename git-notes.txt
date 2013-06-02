@@ -1,0 +1,56 @@
+basic stuff for git
+
+1- when using git you have set a username and a email so that way when you push to a repository aka 
+"update the github repository" it knows who did it. 
+
+you would use these commands to set the name and email you will use.
+
+$ git config --global user.name "John Doe"
+$ git config --global user.email johndoe@example.com
+
+using the "git config" command you can also set which editor you want to use when you write notes for
+each commit.
+
+$ git config --global core.editor emacs
+
+if you want to see what your config files are set to so far put...
+
+$ git config --list
+
+2-now that you have your config set up (you can do way more to it) you can now make a repository. 
+in this case on the cwolf server, go into the directory you want to make into a repository and put..
+
+git init
+
+this makes a git repo in that directory and makes a .git directory, which doesn't show but you can 
+enter it.
+
+if you dont want to use a directory on the cwolf server and use a repo thats already on github you 
+have to clone it over to the cwolf server. Remembe though, you still have to make a repo on the cwolf
+server with "git init" before you clone stuff from github repo into the cwolfserver repo
+
+git clone git$githubWhaetverRepoFromGithub
+
+
+
+git add remote origin http://UrlOnGitHubForThatRepository  //so we know where are files are pushed
+    	     
+git add file // this puts the file into the staging area
+git status // this shows which files are in the staging area 
+git diff //shows the difference between the files you modified
+git commit // this commits the files that are in the staging area. you can do git commit -m "comment"
+git log // shows the commits you made to that repository and the note you put for that commit
+git push origin master // pushes the commit to the remote repository aka github. master means you
+    	 	       // are pushing it to the master, and 'origin' is the web url of the repo
+		       // on github. it should also ask for the github id and pass.
+
+Master is the main version of the project you are working on. If you want to add stuff and
+test it first before you add it to master you would then make a 'branch' which is basically a 
+copy of master that you can add stuff to and it wont mess up the main version. Once you got your
+changes to work then you can "i think its merge?" the branch with the master and that applies the
+changes i think. 
+
+
+check out this website for learning git
+
+http://git-scm.com/book
